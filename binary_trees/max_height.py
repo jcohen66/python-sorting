@@ -18,7 +18,7 @@ def height(root):
         return 0
 
     # recurse for the left and right subtree
-    # and consider maximum depth.
+    # and consider maximum depth. (Plus account for root +1)
     return 1 + max(height(root.left), height(root.right))
 
 
