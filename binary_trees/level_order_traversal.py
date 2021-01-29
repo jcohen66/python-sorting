@@ -10,11 +10,17 @@ class Node(object):
         self.right = right
 
 def levelorder(root):
+    """
+    Traverse across the level, first left then right
+    """
     h = height(root)
     for i in range(1, h+1):
         print_given_level(root, i)
 
 def print_given_level(root, level):
+    """
+    Print the values across the given level of height.
+    """
     # Base case
     if root is None:
         return
@@ -29,6 +35,11 @@ def print_given_level(root, level):
 
 
 def height(node):
+    """
+    Calculate the height of a subtree by traversing
+    the left subtree and right subtree then taking
+    the returning max of the two + 1 for the root.
+    """
     # Base case
     if node is None:
         return 0
@@ -65,3 +76,5 @@ root.right.right.right = Node(11)
 
 print("Level order traversal of binary tree is -")
 levelorder(root)
+
+print(f"Height: {height(root.left.left)}")
