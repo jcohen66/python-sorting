@@ -12,10 +12,10 @@ tup = (1, True, object(), -1)
 print(tup[0])
 print(tup[1])
 
-Car = namedtuple("Car", "color make model mileage")
+Car = namedtuple("Car", "color make data_structures mileage")
 print(car)
 
-Car = namedtuple("Car", ["color", "make", "model", "mileage"])
+Car = namedtuple("Car", ["color", "make", "data_structures", "mileage"])
 print(car)
 
 print(Car("blue", "Tesla", "Model Y", 5))
