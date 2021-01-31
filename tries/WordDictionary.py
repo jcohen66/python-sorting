@@ -3,7 +3,8 @@ from collections import defaultdict
 def _trie():
     return defaultdict(_trie)
 
-TERMINAL = None
+# TERMINAL = None
+TERMINAL = '*'
 
 class WordDictionary(object):
     def __init__(self):
@@ -39,3 +40,4 @@ if __name__ == '__main__':
     print(t.search("doe"))
     print(t.search("do"))
     print(t.search("done"))
+
