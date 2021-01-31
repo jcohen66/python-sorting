@@ -1,6 +1,8 @@
 """
 Solve for a solution path to the rat maze
 using a backtracking algo.
+
+Uses a parallel maze to track solution path.
 """
 
 # Dimensions of maze
@@ -16,7 +18,11 @@ def is_safe(maze, x,y):
     """
     Check if position is in-bounds and is part of solution.
     """
-    if x >= 0 and x < N and y >= 0 and y < N and maze[x][y] == 1:
+    if x >= 0 and \
+            x < N and \
+            y >= 0 and \
+            y < N and \
+              maze[x][y] == 1:
         return True
 
     return False
