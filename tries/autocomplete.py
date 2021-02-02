@@ -12,10 +12,6 @@ class Node(object):
 class Autocomplete(object):
 
     def __init__(self, dict, trie=None):
-        """
-        1. Find the last node of the prefix
-        2. find all words associated with this node
-        """
         self.dict = dict
         self.trie = Node("")
         for s in dict:
@@ -41,7 +37,9 @@ class Autocomplete(object):
         results = []
 
         curr = self.trie
+        # Walk the chars in prefix
         for c in pre:
+            # Walk the chars in children
             if c in curr.children:
                 curr = curr.children[c]
             else:
@@ -55,6 +53,7 @@ class Autocomplete(object):
         if node.isWord:
             results.append(node.prefix)
         for c in node.children.keys():
+            # Recurse and make sure to move the c
             self.find_all_child_words(node.children[c], results)
 # Driver
 strings = ["abc", "acd", "bcd", "def", "a", "aba"]
