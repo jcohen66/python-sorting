@@ -32,4 +32,4 @@ result = s.add_two_numbers(l1, l2)
 
 while result:
     print(result.val, end=" ")
-    result = result.next
+    result = result.nextd
