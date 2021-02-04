@@ -73,11 +73,13 @@ def keypad_string(keys):
             pass
         else:
             if not prev_key:
+                # first key press
                 prev_key = curr_key
                 count = 1
             else:
                 # get the map
                 curr_key_letters = KEY_TO_LETTERS[curr_key]
+
                 # press same key
                 if prev_key == curr_key:
                     # press X times already
@@ -107,17 +109,5 @@ def keypad_string(keys):
             result += curr_key_letters[count - 1]
 
     return result
-
-    # corresponding letter (taking into account
-    # keys pressed multiple times)
-
-
-
-
-
-
-
-
-    return str
 
 
