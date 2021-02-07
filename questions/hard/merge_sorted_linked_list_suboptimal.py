@@ -36,18 +36,19 @@ def merge_k_linked_lists(linked_lists):
     ... ]))
     Link(1, Link(2, Link(2, Link(3, Link(3, Link(4))))))
     '''
-    copy_linked_lists = linked_lists[:]
+    # make a deep copy so we can mutate (bad idea)
+    copy_linked_lists = linked_lists[:]                 # O(n)
     result = Link(0)
     pointer = result
 
     # How many times does the while look run?
     # k*n
-    while any(copy_linked_lists):                     # O(k)
+    while any(copy_linked_lists):                       # O(k)
         front_vals = [
             link.key for link in copy_linked_lists if link
         ] #O(k)
-        min_val = min(front_vals)                     # O(k)
-        for i, link in enumerate(copy_linked_lists):  # O(k)
+        min_val = min(front_vals)                       # O(k)
+        for i, link in enumerate(copy_linked_lists):    # O(k)
             if link and link.key == min_val:
                 pointer.next = Link(link.key)
                 pointer = pointer.next
