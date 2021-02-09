@@ -4,6 +4,15 @@ class LinkedNode(object):
         self.next = next
 
 class LinkedList(object):
+    '''
+    1. Initialize three pointers: prev as None, curr as head, next as None
+    2. Iterate thru list starting with head
+        3. Store next node: next = curr->next
+        4. Change next of curr
+        5. This is where the actual reversing happens: curr->next = prev
+        6. Move prev and curr on step forward: prev = curr; curr = next
+    7. Move head to prev
+    '''
     def __init__(self):
         self.head = None
 
