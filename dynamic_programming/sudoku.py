@@ -9,6 +9,7 @@ Finally, return if no solution possible
 '''
 import numpy as np
 
+# Grid with only one possible solution.
 grid0 = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
         [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -19,6 +20,7 @@ grid0 = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
         [0, 0, 0, 4, 1, 9, 0, 0, 5],
         [0, 0, 0, 0, 8, 0, 0, 7, 9]]
 
+# Grid with multiple possible solutions.
 grid = [[5, 3, 0, 0, 7, 0, 0, 0, 0],
         [6, 0, 0, 1, 9, 5, 0, 0, 0],
         [0, 9, 8, 0, 0, 0, 0, 6, 0],
@@ -65,11 +67,20 @@ def possible(y, x, n):
 
 
 def solve():
+    '''
+    Solve method is called recursively to try a solution
+    but backtracks and tries again with different values
+    if it hits a dead end.
+    :return:
+    '''
     global grid
+    # Traverse rows
     for y in range(9):
+        # Traverse columns
         for x in range(9):
             # Is there a blank?
             if grid[y][x] == 0:
+                # Check all possible values in this grid element
                 for n in range(1,10):
                     if possible(y,x,n):
                         # Put the value there
@@ -79,7 +90,7 @@ def solve():
                         # Bad choice so backtrack
                         grid[y][x] = 0
 
-                # We have tried all possibilitiess
+                # We have tried all possibilities
                 return
 
     print(np.matrix(grid))
