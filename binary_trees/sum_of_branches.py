@@ -23,3 +23,14 @@ def branchSumsR(root, s, arr):
 
     branchSumsR(root.left, new_running_sum, arr)
     branchSumsR(root.right, new_running_sum, arr)
+
+# Driver
+root = BinaryTree(1)
+root.left = BinaryTree(2)
+root.right = BinaryTree(3)
+root.right.left = BinaryTree(4)
+root.right.right = BinaryTree(5)
+root.right.right.left = BinaryTree(6)
+root.right.right.right = BinaryTree(7)
+
+print(branchSums(root))
