@@ -22,7 +22,7 @@ class Solution(object):
             word1 = words[i]
             word2 = words[i+1]
 
-            # Scan letters of smaller word
+            # Scan letters of sma/ler word
             for i in range(min(len(word1), len(word2))):
                 # Do the words match?
                 if word1[i] != word2[i]:
